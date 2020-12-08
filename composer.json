@@ -30,5 +30,15 @@
     "psr-4": {
       "MagicLaravel\\": "src/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+          "MagicLaravel\\ServiceProvider"
+      ],
+      "aliases": {
+          "Magic": "MagicLaravel\\Facade"
+      }
+    }
   }
 }
