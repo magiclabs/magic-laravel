@@ -30,11 +30,5 @@ return PhpCsFixer\Config::create()
         // Keep this disabled to avoid unnecessary diffs in PHPDoc comments of
         // codegen'd classes.
         'phpdoc_align' => false,
-
-        // This is a "risky" rule that causes a bug in our codebase.
-        // Specifically, in `StripeObject.updateAttributes` we construct new
-        // `StripeObject`s for metadata. We can't use `self` there because it
-        // needs to be a raw `StripeObject`.
-        'self_accessor' => false,
     ])
 ;
