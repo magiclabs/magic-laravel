@@ -34,10 +34,10 @@
   "extra": {
     "laravel": {
       "providers": [
-          "MagicLaravel\\ServiceProvider"
+        "MagicLaravel\\ServiceProvider"
       ],
       "aliases": {
-          "Magic": "MagicLaravel\\Facade"
+        "Magic": "MagicLaravel\\Facade"
       }
     }
   }
