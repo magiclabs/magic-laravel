@@ -2,7 +2,6 @@
 
 namespace MagicAdmin\Tests;
 
-use BadMethodCallException;
 use MagicAdmin\Resource\Token;
 use MagicAdmin\Resource\User;
 use MagicLaravel\Facade;
@@ -30,22 +29,8 @@ final class MagicTest extends TestCase
 
     public function testFacade()
     {
-        static::assertInstanceOf(Token::class, Facade::token()->instance);
-        static::assertInstanceOf(User::class, Facade::user()->instance);
-    }
-
-    /**
-     *  @doesNotPerformAssertions
-     */
-    public function testCamelCaseProxyValidCall()
-    {
-        Facade::token()->getPublicAddress(static::DID_TOKEN);
-    }
-
-    public function testCamelCaseProxyInvalidCall()
-    {
-        $this->expectException(BadMethodCallException::class);
-        Facade::token()->aNonExistentMethod();
+        static::assertInstanceOf(Token::class, Facade::token());
+        static::assertInstanceOf(User::class, Facade::user());
     }
 
     /**
