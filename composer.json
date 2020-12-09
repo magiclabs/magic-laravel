@@ -1,6 +1,6 @@
 {
   "name": "magiclabs/magic-laravel",
-  "description": "Magic Laravel Library",
+  "description": "Magic Admin Laravel Library",
   "keywords": [
     "magic",
     "link",
@@ -21,7 +21,7 @@
   ],
   "require": {
     "magiclabs/magic-admin-php": "^0.1.1",
-    "illuminate/support": "^5.5|^6.0|^7.0|^8.0"
+    "illuminate/support": "^5.3|^6.0|^7.0|^8.0"
   },
   "require-dev": {
     "orchestra/testbench": "^6.5"
