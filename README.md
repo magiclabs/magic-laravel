@@ -1,6 +1,6 @@
 # Magic Admin Laravel SDK
 
-This package provides direct Laravel integration for [Magic Admin PHP SDK](https://github.com/magiclabs/magic-admin-php)
+This package provides direct Laravel integration for [Magic Admin PHP SDK](https://github.com/magiclabs/magic-admin-php).
 
 ## Requirements
 
@@ -16,7 +16,7 @@ composer require magiclabs/magic-laravel
 
 ## Older Laravel Installations
 
-If you are using Laravel 5.5 or newer then skip this part. Otherwise you will need to manually register the service provider and facade alias by going to `config/app.php`
+If you are using Laravel 5.5 or newer then skip this part. Otherwise you will need to manually register the service provider and facade alias by going to `config/app.php`.
 
 Add to the `providers` array:
 
@@ -32,13 +32,13 @@ Add to the `aliases` array:
 
 ## Setup
 
-### Publish config file.
+Publish config file.
 
 ```
 php artisan vendor:publish --provider="MagicLaravel\ServiceProvider"
 ```
 
-Add `MAGIC_SECRET_API_KEY` to your **.env** file by going to the [Magic Dashboard](https://dashboard.magic.link)
+Add `MAGIC_SECRET_API_KEY` to your **.env** file by going to the [Magic Dashboard](https://dashboard.magic.link).
 
 ```
 MAGIC_SECRET_API_KEY=sk_XXXX_XXXXXXXXXXXXXXXX
