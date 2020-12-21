@@ -16,8 +16,9 @@ use Orchestra\Testbench\TestCase;
 final class MagicTest extends TestCase
 {
     const SECRET_API_KEY = 'a-fake-key';
-
-    const DID_TOKEN = 'WyIweGUwMjQzNTVlNDI5ZGNhZDM1MTdhZDk5ZWEzNDEwYWJmZDQ1YjBiNjM5OGIwNjY1NGRiYTQxNzljODdlMTYyNzgxNTc1YjA5ODFjNjU4ZjcwMjYwZTQ5MjMwZGE5NDg4YTA0ZDk5NzBlYjM4ZTZmZGRlY2Q2NTA5YTAyN2IwOGI5MWIiLCJ7XCJpYXRcIjoxNTg1MDExMjA0LFwiZXh0XCI6MTkwMDQxMTIwNCxcImlzc1wiOlwiZGlkOmV0aHI6MHhCMmVjOWI2MTY5OTc2MjQ5MWI2NTQyMjc4RTlkRkVDOTA1MGY4MDg5XCIsXCJzdWJcIjpcIjZ0RlhUZlJ4eWt3TUtPT2pTTWJkUHJFTXJwVWwzbTNqOERReWNGcU8ydHc9XCIsXCJhdWRcIjpcImRpZDptYWdpYzpmNTQxNjhlOS05Y2U5LTQ3ZjItODFjOC03Y2IyYTk2YjI2YmFcIixcIm5iZlwiOjE1ODUwMTEyMDQsXCJ0aWRcIjpcIjJkZGY1OTgzLTk4M2ItNDg3ZC1iNDY0LWJjNWUyODNhMDNjNVwiLFwiYWRkXCI6XCIweDkxZmJlNzRiZTZjNmJmZDhkZGRkZDkzMDExYjA1OWI5MjUzZjEwNzg1NjQ5NzM4YmEyMTdlNTFlMGUzZGYxMzgxZDIwZjUyMWEzNjQxZjIzZWI5OWNjYjM0ZTNiYzVkOTYzMzJmZGViYzhlZmE1MGNkYjQxNWU0NTUwMDk1MmNkMWNcIn0iXQ==';
+    const HTTP_RETRIES = 123;
+    const HTTP_TIMEOUT = 456;
+    const HTTP_BACKOFF_FACTOR = 789;
 
     public function testMagic()
     {
@@ -25,6 +26,9 @@ final class MagicTest extends TestCase
 
         static::assertInstanceOf(Magic::class, $magic);
         static::assertSame(static::SECRET_API_KEY, $magic->api_secret_key);
+        static::assertSame($magic->user->request_client->_retries, static::HTTP_RETRIES);
+        static::assertSame($magic->user->request_client->_timeout, static::HTTP_TIMEOUT);
+        static::assertSame($magic->user->request_client->_backoff_factor, static::HTTP_BACKOFF_FACTOR);
     }
 
     public function testFacade()
@@ -53,5 +57,8 @@ final class MagicTest extends TestCase
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('magic.secret_api_key', static::SECRET_API_KEY);
+        $app['config']->set('magic.http.retries', static::HTTP_RETRIES);
+        $app['config']->set('magic.http.timeout', static::HTTP_TIMEOUT);
+        $app['config']->set('magic.http.backoff_factor', static::HTTP_BACKOFF_FACTOR);
     }
 }
