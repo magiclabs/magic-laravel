@@ -67,8 +67,3 @@ Magic::token()->validate('<DID_Token>');
 
 Magic::user()->get_metadata_by_token('<DID_Token>');
 ```
-
-
-
-
-
