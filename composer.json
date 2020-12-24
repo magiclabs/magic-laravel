@@ -1,0 +1,49 @@
+{
+  "name": "magiclabs/magic-laravel",
+  "description": "Magic Admin Laravel Library",
+  "keywords": [
+    "magic",
+    "link",
+    "admin",
+    "authentication",
+    "passwordless",
+    "oauth2",
+    "webauthen",
+    "laravel"
+  ],
+  "homepage": "https://magic.link",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Magic Labs Inc.",
+      "email": "support@magic.link"
+    }
+  ],
+  "require": {
+    "magiclabs/magic-admin-php": "^0.1.2",
+    "illuminate/support": "^5.3|^6.0|^7.0|^8.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "MagicLaravel\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MagicLaravel\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MagicLaravel\\ServiceProvider"
+      ],
+      "aliases": {
+        "Magic": "MagicLaravel\\Facade"
+      }
+    }
+  }
+}
