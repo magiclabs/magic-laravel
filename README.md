@@ -1,4 +1,4 @@
-# Magic Admin Laravel SDK
+# Magic Laravel SDK
 
 This package provides direct Laravel integration for [Magic Admin PHP SDK](https://github.com/magiclabs/magic-admin-php).
 
@@ -46,7 +46,7 @@ MAGIC_SECRET_API_KEY=sk_XXXX_XXXXXXXXXXXXXXXX
 
 ## Usage
 
-For complete documenation see [Magic Admin PHP SDK](https://github.com/magiclabs/magic-admin-php) and the [Magic docs](https://docs.magic.link/admin-sdk/php/get-started).
+For complete documentation see [Magic Admin PHP SDK](https://github.com/magiclabs/magic-admin-php) and the [Magic docs](https://docs.magic.link/admin-sdk/php/get-started).
 
 Get instance using the app helper:
 
