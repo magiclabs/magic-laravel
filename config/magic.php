@@ -22,10 +22,10 @@ return [
      */
 
     'http' => [
-        'retries' => 3, // Total number of retries to allow
+        'retries' => env('MAGIC_RETRIES', 3), // Total number of retries to allow
 
-        'timeout' => 10, // A period of time the request is going to wait for a response
+        'timeout' => env('MAGIC_TIMEOUT', 10), // A period of time the request is going to wait for a response
 
-        'backoff_factor' => 0.02, // A backoff factor to apply between retry attempts
+        'backoff_factor' => env('MAGIC_BACKOFF_FACTOR', 0.02), // A backoff factor to apply between retry attempts
     ],
 ];
