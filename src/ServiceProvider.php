@@ -10,7 +10,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         $this->app->singleton(Magic::class, function () {
-            $magic= new Magic(
+            $magic = new Magic(
                 config('magic.secret_api_key'),
                 config('magic.http.timeout'),
                 config('magic.http.retries'),
